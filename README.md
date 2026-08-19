@@ -33,7 +33,7 @@ $C\in\mathbb{R}^{K\times P}$ is applied:
 
 $$
 z = CI = (CT)S + C\eta.
-$$
+$$  
 
 The effective physical encoder is therefore
 
