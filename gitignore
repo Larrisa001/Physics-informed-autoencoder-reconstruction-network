@@ -1,0 +1,89 @@
+# -----------------------------------------------------------------------------
+# Python bytecode and caches
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+
+# -----------------------------------------------------------------------------
+# Virtual environments and local environment variables
+# -----------------------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+.conda/
+.env
+.env.*
+!.env.example
+
+# -----------------------------------------------------------------------------
+# IDE and editor settings
+# -----------------------------------------------------------------------------
+.idea/
+.vscode/
+*.code-workspace
+*.swp
+*.swo
+*~
+
+# -----------------------------------------------------------------------------
+# Jupyter and plotting caches
+# -----------------------------------------------------------------------------
+.ipynb_checkpoints/
+.matplotlib/
+
+# -----------------------------------------------------------------------------
+# Operating-system files
+# -----------------------------------------------------------------------------
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+
+# -----------------------------------------------------------------------------
+# Logs and temporary files
+# -----------------------------------------------------------------------------
+*.log
+*.tmp
+*.temp
+*.bak
+*.old
+
+# -----------------------------------------------------------------------------
+# Large calibrated data and generated physical matrices
+# -----------------------------------------------------------------------------
+# The transmission matrix can be tens of gigabytes. Distribute it through an
+# archival data repository and provide its URL/checksum in README.md.
+neural_network/**/T_ori.npy
+neural_network/**/T_ori.npz
+
+# Generated fixed-physics matrices. They can be rebuilt from T and the settings.
+**/W_eff.npy
+**/projection_matrix.npy
+
+# -----------------------------------------------------------------------------
+# Model checkpoints
+# -----------------------------------------------------------------------------
+*.pt
+*.pth
+*.ckpt
+
+# -----------------------------------------------------------------------------
+# Training outputs
+# -----------------------------------------------------------------------------
+runs/**
+!runs/.gitkeep
+
+# Uncomment these patterns if raw experimental images are distributed
+# separately instead of through GitHub.
+# neural_network/**/images/
+# neural_network/background/
+
