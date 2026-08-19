@@ -504,8 +504,8 @@ paper:
 
 ```bibtex
 @article{AUTHOR_YEAR_SPECKLE_SPECTROMETER,
-  title   = {[PAPER TITLE]},
-  author  = {[AUTHORS]},
+  title   = {[Metafiber spectrometer enabled by TPP-printed volumetric freeform metasurfaces]},
+  author  = {[Ting Ma#, Haiming Qiu#, Xianjin Liu, Qiwen Bao, Shuji Mo, Yongkang Dong, Xuejin Li*, Jun-Jun Xiao*, and Jiajun Tian1*]},
   journal = {[JOURNAL]},
   year    = {[YEAR]},
   volume  = {[VOLUME]},
