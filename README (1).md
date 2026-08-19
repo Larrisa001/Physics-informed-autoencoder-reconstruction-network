@@ -11,7 +11,7 @@ interval of **0.01 nm (10 pm)**, giving **6001 spectral sampling points**.
 > **Scope.** This repository trains the fixed-physics spectral decoder. It does
 > not train a learned optical encoder or an experimental-domain adapter.
 
-## 1. Physical model
+## 1. Physical model 
 
 For a discretized incident spectrum $S$, the camera measurement is modeled as
 
