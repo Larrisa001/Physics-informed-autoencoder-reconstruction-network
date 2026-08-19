@@ -1,0 +1,10 @@
+{
+  "python": "3.9.25 (main, Nov  3 2025, 22:44:01) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "torch": "2.8.0+cu128",
+  "numpy": "2.0.2",
+  "cuda_available": true,
+  "cuda_runtime": "12.8",
+  "cudnn": 91002,
+  "gpu": "NVIDIA GeForce RTX 5090"
+}

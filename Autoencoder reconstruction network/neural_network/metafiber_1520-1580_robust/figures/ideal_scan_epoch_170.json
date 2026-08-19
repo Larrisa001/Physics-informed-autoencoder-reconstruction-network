@@ -1,0 +1,10 @@
+{
+  "mae_nm": 1.3331111481407639e-05,
+  "median_absolute_error_nm": 0.0,
+  "rmse_nm": 0.0003651179464419068,
+  "max_absolute_error_nm": 0.009999999999990905,
+  "accuracy_within_1bin": 1.0,
+  "accuracy_within_2bin": 1.0,
+  "accuracy_within_5bin": 1.0,
+  "catastrophic_over_1nm_count": 0
+}

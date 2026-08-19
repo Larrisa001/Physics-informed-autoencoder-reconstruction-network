@@ -1,0 +1,25 @@
+{
+  "diagnostic_tolerance_nm": 0.05,
+  "labeled_experimental_image_count": 0,
+  "diagnosis_counts": {
+    "unknown_missing_true_wavelength_or_W_eff": 1
+  },
+  "full_ideal_decoder_scan": {
+    "sample_count": 6001.0,
+    "mae_nm": 1.3331111481407639e-05,
+    "median_absolute_error_nm": 0.0,
+    "rmse_nm": 0.0003651179464419068,
+    "max_absolute_error_nm": 0.009999999999990905,
+    "accuracy_within_10_pm": 1.0,
+    "accuracy_within_20_pm": 1.0,
+    "accuracy_within_50_pm": 1.0,
+    "accuracy_within_100_pm": 1.0,
+    "accuracy_within_500_pm": 1.0,
+    "accuracy_within_1000_pm": 1.0
+  },
+  "saturation": {
+    "threshold_value": 255.0,
+    "mean_saturated_pixel_fraction": 0.0002105712890625,
+    "max_saturated_pixel_fraction": 0.0002105712890625
+  }
+}

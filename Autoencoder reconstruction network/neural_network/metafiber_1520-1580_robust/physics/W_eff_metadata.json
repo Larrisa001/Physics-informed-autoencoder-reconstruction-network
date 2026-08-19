@@ -1,0 +1,34 @@
+{
+  "format_version": 3,
+  "T": {
+    "absolute_path": "D:\\mt\\python\\fiber_spectrometer\\experiment3\\neural_network\\1520-1580\\T_ori.npy",
+    "size_bytes": 7865630848,
+    "mtime_ns": 1766456209712785700,
+    "stat_sha256": "fa97269dc020520741b79c44f7600892412262601b305ef1bcdce9b94fcaab27"
+  },
+  "T_original_shape": [
+    327680,
+    6001
+  ],
+  "T_effective_shape": [
+    327680,
+    6001
+  ],
+  "T_layout": "pixels_by_wavelength",
+  "T_normalization": "none",
+  "T_column_scale": null,
+  "projection": {
+    "absolute_path": "D:\\mt\\python\\fiber_spectrometer\\experiment3\\runs\\metafiber_1520-1580\\physics\\projection_matrix.npy",
+    "size_bytes": 524288128,
+    "mtime_ns": 1787060827338451500,
+    "stat_sha256": "528be25995c0ab6ca7a21fd1d994eeebc25a0b418f270d10e759669ef9c07cbe"
+  },
+  "projection_shape": [
+    800,
+    327680
+  ],
+  "compress_dim": 800,
+  "wavelength_start_nm": 1520.0,
+  "wavelength_end_nm": 1580.0,
+  "n_wavelengths": 6001
+}

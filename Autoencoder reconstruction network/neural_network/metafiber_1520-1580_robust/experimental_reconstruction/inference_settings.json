@@ -1,0 +1,26 @@
+{
+  "checkpoint": "D:\\mt\\python\\fiber_spectrometer\\experiment3\\runs\\metafiber_1520-1580_robust\\checkpoints\\decoder_best.pt",
+  "projection": "D:\\mt\\python\\fiber_spectrometer\\experiment3\\runs\\metafiber_1520-1580\\physics\\projection_matrix.npy",
+  "effective_matrix": "D:\\mt\\python\\fiber_spectrometer\\experiment3\\runs\\metafiber_1520-1580_robust\\physics\\W_eff.npy",
+  "background_dir": "D:\\mt\\python\\fiber_spectrometer\\experiment3\\neural_network\\1520-1580\\dark",
+  "background_count": 10,
+  "processed_image_shape": [
+    512,
+    640
+  ],
+  "pixel_count": 327680,
+  "roi_xywh": null,
+  "rotate_degrees_counterclockwise": 0,
+  "flip_x": false,
+  "flip_y": false,
+  "transpose": false,
+  "flatten_order": "C",
+  "clip_negative_after_dark_subtraction": false,
+  "color_mode": "reject",
+  "saturation_value": 255.0,
+  "saturation_tolerance": 1e-06,
+  "diagnostic_tolerance_nm": 0.05,
+  "full_ideal_scan_enabled": true,
+  "ideal_scan_batch_size": 64,
+  "output_normalization": "per-spectrum peak (L-infinity)"
+}
