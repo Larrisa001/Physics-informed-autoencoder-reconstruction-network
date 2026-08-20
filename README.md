@@ -123,45 +123,7 @@ Two independent noisy views of the same target spectrum are reconstructed in
 each training step. A consistency term encourages the two reconstructions to
 agree.
 
-## 6. Loss function
-
-The supervised reconstruction loss is
-
-$$
-\mathcal{L}_{\mathrm{sup}}
-= \alpha\mathcal{L}_{\cos}
-+ \beta\mathcal{L}_{\mathrm{amp}}
-+ \gamma\mathcal{L}_{\mathrm{grad}}
-+ w_{\mathrm{EMD}}\mathcal{L}_{\mathrm{EMD}},
-$$
-
-with the default weights
-
-$$
-\alpha=1,\qquad \beta=2,\qquad \gamma=0.1,
-\qquad w_{\mathrm{EMD}}=0.25.
-$$
-
-The terms are:
-
-- **Cosine loss:** spectral-shape similarity;
-- **weighted L1 loss:** absolute-amplitude agreement, using
-  $1+20S$ as the wavelength-dependent weight;
-- **gradient loss:** agreement between adjacent spectral differences; and
-- **EMD loss:** a one-dimensional cumulative-distribution distance that
-  penalizes large wavelength displacements more strongly than local shifts.
-
-The final objective is
-
-$$
-\mathcal{L}
-= \mathcal{L}_{\mathrm{sup}}
-+ w_{\mathrm{cons}}\mathcal{L}_{\mathrm{cons}},
-$$
-
-where the default consistency weight is $w_{\mathrm{cons}}=0.20$.
-
-## 7. Repository structure
+## 6. Repository structure
 
 Place the training script directly in the repository root and organize the
 files as follows:
@@ -184,7 +146,7 @@ If `projection_matrix.npy` does not exist, the script creates it automatically.
 Once a projection matrix has been used to train a decoder, retain it: inference
 must use the identical matrix.
 
-## 8. Transmission-matrix requirements
+## 7. Transmission-matrix requirements
 
 The preferred format is an uncompressed `.npy` file because it supports memory
 mapping. `.npz` files are accepted but may load the complete matrix into RAM.
@@ -206,23 +168,7 @@ background/dark corrected during calibration. It does not read dark frames.
 Experimental inference images must therefore be corrected in the same way,
 normally by subtracting the mean dark frame exactly once.
 
-### Intensity scaling
-
-Do not independently rescale experimental speckle images to `[0,1]` if the
-transmission matrix is stored in raw camera counts. Training and inference must
-use consistent units.
-
-The default setting is
-
-```text
---T_normalization none
-```
-
-Column-wise L2 normalization changes the wavelength-dependent throughput of
-the calibrated system and should be enabled only when that change is physically
-intended.
-
-## 9. Installation
+## 8. Installation
 
 The code requires Python 3.9 or later. A CUDA-enabled PyTorch installation is
 recommended for training.
@@ -249,7 +195,7 @@ pip install numpy matplotlib tqdm
 The reported implementation environment can be recorded automatically in
 `environment.json` at the start of each run.
 
-## 10. Quick start
+## 9. Quick start
 
 The default paths are resolved relative to the script location, not the current
 IDE working directory. If the files follow the structure above, start training
@@ -280,7 +226,7 @@ python train_physics_informed_spectrometer.py \
 On Windows PowerShell, the same command can be written on one line or use a
 backtick instead of `\` for line continuation.
 
-## 11. Default configuration
+## 10. Default configuration
 
 | Parameter | Default |
 |---|---:|
@@ -305,7 +251,7 @@ backtick instead of `\` for line continuation.
 | Physics build mode | Disk streaming |
 | Wavelength block size | 128 |
 
-## 12. Building the effective matrix
+## 11. Building the effective matrix
 
 The default `disk_stream` mode reads the transmission matrix in wavelength
 blocks and performs
@@ -342,7 +288,7 @@ To rebuild it deliberately, use:
 python train_physics_informed_spectrometer.py --force_rebuild_physics
 ```
 
-## 13. Checkpoints and resuming training
+## 12. Checkpoints and resuming training
 
 The script writes two kinds of checkpoints:
 
@@ -368,7 +314,7 @@ python train_physics_informed_spectrometer.py \
   --out_dir runs/metafiber_1520-1580_robust_repeat01
 ```
 
-## 14. Learning-rate scheduling and early stopping
+## 13. Learning-rate scheduling and early stopping
 
 The learning rate is reduced when the model-selection score stops improving.
 The score is
@@ -392,7 +338,7 @@ python train_physics_informed_spectrometer.py --early_stop_patience 0
 
 The best checkpoint is retained even when early stopping is triggered.
 
-## 15. Validation
+## 14. Validation
 
 The code evaluates:
 
@@ -418,7 +364,7 @@ It verifies the learned inverse of the calibrated forward model, but it is not
 a substitute for validation using independently acquired experimental speckle
 images.
 
-## 16. Outputs
+## 15. Outputs
 
 A default run produces:
 
@@ -451,7 +397,7 @@ runs/metafiber_1520-1580_robust/checkpoints/decoder_best.pt
 Experimental inference must use the same projection matrix and wavelength axis
 recorded in the checkpoint and run manifest.
 
-## 17. Reproducibility
+## 16. Reproducibility
 
 The synthetic dataset is index-deterministic. A sample is determined by its
 dataset seed and sample index, avoiding duplicated random sequences across
@@ -467,7 +413,7 @@ python train_physics_informed_spectrometer.py --deterministic
 Strict determinism can reduce training speed and may change which optimized
 GPU kernels are available.
 
-## 18. Large files and GitHub
+## 17. Large files and GitHub
 
 The transmission matrix and generated physical matrices can be many gigabytes
 and should not be committed to ordinary Git history. A recommended `.gitignore`
@@ -497,7 +443,7 @@ SHA-256: [SHA256_CHECKSUM]
 Small inference checkpoints may be distributed through a release or Git LFS,
 subject to the repository's file-size policy.
 
-## 19. Citation
+## 18. Citation
 
 If this code or dataset is useful in your research, please cite the associated
 paper:
@@ -516,19 +462,9 @@ paper:
 
 Replace the bracketed fields after the paper metadata is finalized.
 
-## 20. License
+## 19. License
 
 This software is released under the MIT License. See [`LICENSE`](LICENSE) for
 details. If the calibration data have different redistribution terms, document
 them separately alongside the data download information.
 
-## 21. Contact
-
-For questions about the implementation, calibration data, or reproduction of
-the reported results, please contact:
-
-```text
-[CORRESPONDING AUTHOR]
-[INSTITUTION]
-[EMAIL]
-```
